@@ -6,7 +6,7 @@
 #    By: tcohen <tcohen@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/31 18:10:16 by tcohen            #+#    #+#              #
-#    Updated: 2024/11/14 19:33:50 by tcohen           ###   ########.fr        #
+#    Updated: 2024/11/14 19:41:24 by tcohen           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@
 CC = cc
 
 # Options de compilation
-CFLAGS = -Wall -Wextra -Werror -pthread -I includes -fsanitize=thread
+CFLAGS = -Wall -Wextra -Werror -pthread -I includes
 
 # Dossiers
 SRC_DIR = src
