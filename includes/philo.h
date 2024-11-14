@@ -6,7 +6,7 @@
 /*   By: tcohen <tcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 17:56:42 by tcohen            #+#    #+#             */
-/*   Updated: 2024/11/11 14:54:31 by tcohen           ###   ########.fr       */
+/*   Updated: 2024/11/14 19:30:29 by tcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_philo
 	int				time_sleep;
 	int				nb_meals;
 	int				enough_meals;
+	int				enough_for_w;
 	pthread_t		*thread_add;
 	pthread_t		thread;
 	pthread_mutex_t	last_meal_lock;

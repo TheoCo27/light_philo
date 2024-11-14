@@ -6,7 +6,7 @@
 /*   By: tcohen <tcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 20:02:06 by tcohen            #+#    #+#             */
-/*   Updated: 2024/11/11 13:55:44 by tcohen           ###   ########.fr       */
+/*   Updated: 2024/11/14 19:31:27 by tcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ int	check_nb_meals(t_philo *philo, int nb_meals)
 	int	result;
 
 	result = safe_read(&philo->nb_meals, &philo->nb_meals_lock);
-	if (result == nb_meals)
+	if (result == nb_meals && philo->enough_for_w == 0)
 	{
+		philo->enough_for_w = 1;
 		return (1);
 	}
 	else

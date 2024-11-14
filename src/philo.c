@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: theog <theog@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tcohen <tcohen@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 17:59:23 by tcohen            #+#    #+#             */
-/*   Updated: 2024/11/13 12:06:19 by theog            ###   ########.fr       */
+/*   Updated: 2024/11/14 19:23:41 by tcohen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void	philo_eat(t_philo *philo)
 	usleep(philo->time_eat * 1000);
 	pthread_mutex_unlock(philo->left_fork);
 	pthread_mutex_unlock(philo->right_fork);
-	safe_edit(&philo->nb_meals, (philo->nb_meals + 1), &philo->nb_meals_lock);
+	if (safe_edit(&philo->nb_meals, (philo->nb_meals + 1), &philo->nb_meals_lock) == table->nb_meals)
+		philo->enough_meals = 1;
 	safe_edit(&philo->last_meal_time, get_timestamp(), &philo->last_meal_lock);
 }
 
